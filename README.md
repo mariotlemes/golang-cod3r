@@ -1,8 +1,7 @@
 # golang-cod3r.com.br
 
-Este repositório tem como principal objetivo fazer memória dos recursos de golang.
+Este repositório tem como principal objetivo fazer memória dos recursos de golang. Data de início: 01/02/2021.
 
-## Data: 01/02/2021 - Início do curso
 
 ### Comentários gerais
 
