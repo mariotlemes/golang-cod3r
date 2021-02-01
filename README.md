@@ -6,4 +6,4 @@ Este repositório tem como principal objetivo fazer memória dos recursos de gol
 
 ### Comentários gerais
 
-comentários podem ser feitos por /* */ ou //
+1. comentários podem ser feitos por /* */ ou //
