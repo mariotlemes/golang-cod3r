@@ -4,7 +4,7 @@ package main
 import "fmt"
 
 /**
-Esta função é executada
+Esta função é executada main()
  */
 
 func main() {
