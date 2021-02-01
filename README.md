@@ -3,7 +3,11 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [golang-cod3r.com.br](#golang-cod3rcombr)
+  - [Fundamentos](#fundamentos)
     - [Comentários gerais](#coment%C3%A1rios-gerais)
+    - [2. Comandos úteis](#2-comandos-%C3%BAteis)
+    - [3. Tipos](#3-tipos)
+    - [4. Valores zeros (padrão)](#4-valores-zeros-padr%C3%A3o)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -13,7 +17,7 @@ Este repositório tem como principal objetivo fazer memória dos recursos de gol
 
 ## Fundamentos
 
-### 1. Comentários gerais
+### Comentários gerais
   - comentários podem ser feitos por /* */ ou //
 
 ### 2. Comandos úteis
