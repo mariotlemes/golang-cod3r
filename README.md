@@ -21,4 +21,4 @@ Este repositório tem como principal objetivo fazer memória dos recursos de gol
 ### Valores zeros (padrão)
   - variáveis float e int64 quando criadas mas não inicializadas com valor possui o valor padrão de 0.
   - variável bool possui o valor padrão false.
-  - ponteiro possui o valor zero como **nil**. O valor nill é o mesmo que null de outras linguagens, referindo-se a vazio.
+  - ponteiro possui o valor zero como **nil**. O valor nil é o mesmo que null de outras linguagens, referindo-se a vazio.
