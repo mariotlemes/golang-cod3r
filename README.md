@@ -90,14 +90,14 @@ Data de início do aprendizado: **01/02/2021**.
   - Estrutura:
 
 
-    func **nome_da_funcao** (parâmetro **tipo**, ...) **tipo_retorno** {
+    func nome_da_funcao (parâmetro tipo, ...) tipo_retorno {
         //lógica da função
     }
 
 - Exemplo:
 
 
-    func **somar** (a int, b int) int {
+    func somar (a int, b int) int {
         return a + b
     }
 
