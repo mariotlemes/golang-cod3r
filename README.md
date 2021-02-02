@@ -100,7 +100,6 @@ Data de início do aprendizado: **01/02/2021**.
     func **somar** (a int, b int) int {
         return a + b
     }
-xs
 
   - função principal: func **main** () {}
   - função main() precisa estar definida no package main.
