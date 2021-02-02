@@ -1,8 +1,8 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents** 
+**Sumário**
 
-- [golang-cod3r.com.br](#golang-cod3rcombr)
+- [Go Lang - Explorando a linguagem do Google](#go-lang---explorando-a-linguagem-do-google)
   - [Fundamentos](#fundamentos)
     - [Comentários gerais](#coment%C3%A1rios-gerais)
     - [Comandos úteis](#comandos-%C3%BAteis)
