@@ -67,18 +67,12 @@ Data de início do aprendizado: **01/02/2021**.
 ### Operadores 
 
 #### Aritméticos
-
-	a := 3
-	b := 2
-
-	fmt.Println("Soma:", a+b)
-	fmt.Println("Subtração:", a-b)
-	fmt.Println("Multiplicação:", a*b)
-	fmt.Println("Módulo:", a%b)
-
-	fmt.Println("E:", a&b)
-	fmt.Println("Ou:", a|b)
-	fmt.Println("Xor:", a^b)
+  - Soma -> +
+  - Subtração -> -
+  - Multiplicação -> *
+  - Módulo -> %
+  - E -> &
+  - Ou -> |
 
 #### Lógicos
  - && -> e;
