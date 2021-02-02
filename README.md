@@ -19,7 +19,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# golang-cod3r.com.br
+# [Go Lang - Explorando a linguagem do Google](https://www.udemy.com/course/curso-go/)
 
 Este repositório tem como principal objetivo fazer memória dos recursos de golang.
 
