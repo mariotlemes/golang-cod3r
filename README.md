@@ -87,17 +87,31 @@ Data de início do aprendizado: **01/02/2021**.
  -  maior ou igual -> < =
 
 ### Funções
-  - func **nome_da_funcao** (parâmetro **tipo**, ...) **tipo_retorno** {}
-  - função executada: func **main** () {}
+  - Estrutura:
+
+
+    func **nome_da_funcao** (parâmetro **tipo**, ...) **tipo_retorno** {
+        //lógica da função
+    }
+
+- Exemplo:
+
+
+    func **somar** (a int, b int) int {
+        return a + b
+    }
+xs
+
+  - função principal: func **main** () {}
   - função main() precisa estar definida no package main.
 
 
  ### Ponteiros 
   - Go não tem aritmética de ponteiros;
   - Como declarar -> var p *int = nil //este ponteiro é um inteiro e deve apontar para nil
-  - i : = 1
-    p = &i // end. de memória da variável i é atribuída ao ponteiro p
-    *p //valor do ponteiro é retornado
+  - i : = 1 // atribuição simplificada da variável i
+  - p = &i // end. de memória da variável i é atribuída ao ponteiro p
+  - *p //valor do ponteiro é retornado
     
 
 ## Estruturas de Controle
