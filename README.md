@@ -119,13 +119,26 @@ Data de início do aprendizado: **01/02/2021**.
 
 ### if-else
    - Estrutura:
-
+```
     if condição {
         //se condição for true;
     } else {
         //se condição for false;
     }
-
+```
    - else não é obrigatório;
    - a condição não é cercada por ().
    - tanto o if quanto else precisam estar delimitados por {}
+
+### if-else-if
+
+### if com Init
+
+### For
+
+### Switch #01
+
+### Switch #02
+
+### Switch #03
+
