@@ -105,7 +105,7 @@ Data de início do aprendizado: 01/02/2021.
 ### if-else
    - Estrutura:
 
-    if **condição** {
+    if condição {
         //se condição for true;
     } else {
         //se condição for false;
