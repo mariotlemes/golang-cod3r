@@ -16,6 +16,12 @@
     - [Ponteiros](#ponteiros)
   - [Estruturas de Controle](#estruturas-de-controle)
     - [if-else](#if-else)
+    - [if-else-if](#if-else-if)
+    - [if com Init](#if-com-init)
+    - [For](#for)
+    - [Switch #01](#switch-01)
+    - [Switch #02](#switch-02)
+    - [Switch #03](#switch-03)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
