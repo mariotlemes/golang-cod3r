@@ -5,15 +5,25 @@
 - [golang-cod3r.com.br](#golang-cod3rcombr)
   - [Fundamentos](#fundamentos)
     - [Comentários gerais](#coment%C3%A1rios-gerais)
-    - [2. Comandos úteis](#2-comandos-%C3%BAteis)
-    - [3. Tipos](#3-tipos)
-    - [4. Valores zeros (padrão)](#4-valores-zeros-padr%C3%A3o)
+    - [Comandos úteis](#comandos-%C3%BAteis)
+    - [Tipos](#tipos)
+    - [Valores zeros (padrão)](#valores-zeros-padr%C3%A3o)
+    - [Operadores](#operadores)
+      - [Aritméticos](#aritm%C3%A9ticos)
+      - [Lógicos](#l%C3%B3gicos)
+      - [Relacionais](#relacionais)
+    - [Funções](#fun%C3%A7%C3%B5es)
+    - [Ponteiros](#ponteiros)
+  - [Estruturas de Controle](#estruturas-de-controle)
+    - [if-else](#if-else)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # golang-cod3r.com.br
 
-Este repositório tem como principal objetivo fazer memória dos recursos de golang. Data de início do aprendizado: 01/02/2021.
+Este repositório tem como principal objetivo fazer memória dos recursos de golang.
+
+Data de início do aprendizado: 01/02/2021.
 
 ## Fundamentos
 
