@@ -14,7 +14,6 @@ func main() {
 	notaFinal := int(nota)
 	fmt.Println(notaFinal)
 
-
 	//int para string
 	fmt.Println("Teste " + strconv.Itoa(123))
 
@@ -23,5 +22,10 @@ func main() {
 
 	fmt.Println(num - 122)
 
+	b, _ := strconv.ParseBool("True")
+
+	if b {
+		fmt.Println("Verdadeiro!")
+	}
 
 }
