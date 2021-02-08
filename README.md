@@ -31,10 +31,10 @@
     - [Atribuição múltipla](#atribui%C3%A7%C3%A3o-m%C3%BAltipla)
     - [Tamanho de um array e convertendo para um tipo](#tamanho-de-um-array-e-convertendo-para-um-tipo)
     - [Tamanho do array indefinido](#tamanho-do-array-indefinido)
-    - [Percorrer um for usando range](#percorrer-um-for-usando-range)
+    - [Percorrer um array usando for e range](#percorrer-um-array-usando-for-e-range)
       - [for para acessar índice e valor](#for-para-acessar-%C3%ADndice-e-valor)
       - [for ignorando o índice usando _](#for-ignorando-o-%C3%ADndice-usando-_)
-    - [for ignorando os valores](#for-ignorando-os-valores)
+      - [for ignorando os valores](#for-ignorando-os-valores)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -311,7 +311,7 @@ Obs: O compilador que vai contar. Neste caso o
 array **numeros** é composto por
 5 inteiros.
 
-### Percorrer um for usando range
+### Percorrer um array usando for e range
 #### for para acessar índice e valor
 ```
 for i, numero := range numeros {
@@ -326,7 +326,7 @@ for _, numeros := range numeros {
 }
 ```
 
-### for ignorando os valores
+#### for ignorando os valores
 ```
 for numeros := range numeros {
   fmt.Println(numeros) //serão impressos os indices
