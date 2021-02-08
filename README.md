@@ -22,9 +22,19 @@
       - [For com uma condição - parecido com if](#for-com-uma-condi%C3%A7%C3%A3o---parecido-com-if)
       - [For tradicional](#for-tradicional)
       - [For "infinito"](#for-infinito)
-    - [Switch #01](#switch-01)
-    - [Switch #02](#switch-02)
-    - [Switch #03](#switch-03)
+    - [Switch](#switch)
+      - [Switch #01](#switch-01)
+      - [Switch #02](#switch-02)
+      - [Switch #03](#switch-03)
+  - [Arrays](#arrays)
+    - [Definição](#defini%C3%A7%C3%A3o)
+    - [Atribuição múltipla](#atribui%C3%A7%C3%A3o-m%C3%BAltipla)
+    - [Tamanho de um array e convertendo para um tipo](#tamanho-de-um-array-e-convertendo-para-um-tipo)
+    - [Tamanho do array indefinido](#tamanho-do-array-indefinido)
+    - [Percorrer um for usando range](#percorrer-um-for-usando-range)
+      - [for para acessar índice e valor](#for-para-acessar-%C3%ADndice-e-valor)
+      - [for ignorando o índice usando _](#for-ignorando-o-%C3%ADndice-usando-_)
+    - [for ignorando os valores](#for-ignorando-os-valores)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -168,11 +178,10 @@ utilizar uma função previamente definida.
 -Exemplo:
 ```
 i := 1
-	for i <= 10 {
-		fmt.Println(i)
-		i++
-	}
-
+for i <= 10 {
+  fmt.Println(i)
+  i++
+}
 ```
 #### For tradicional
 - Exemplo:
@@ -193,10 +202,133 @@ for {
 Obs: A **única** estrutura de 
 repetição em go é o **for**, não
 existe **while** e suas variantes.
+### Switch
+- Usado para múltiplas seleções. Diferentemente
+  do if não testa uma condição. É apenas uma
+  expressão associada e que vai ser testada
+  em um dos cases.
+- Por padrão, em go o switch entra em um case
+  e depois sai da estrutura switch.
+- Palavra **fallthough** significa passe
+  para o próximo case.
+- É possível colocar vários cases em apenas
+  um case (Ex: case 4, 5).
+- Caso não entre em nenhum case, o case
+  **default** é executado.
 
-### Switch #01
+#### Switch #01
+- Exemplo:
 
-### Switch #02
+```
+switch nota {
+  case 10:
+	 fallthrough
+  case 9:
+	return "A"
+  case 8, 7:
+	return "B"
+  case 6, 5:
+  	return "C"
+  case 4, 3:
+	return "D"
+  default:
+	return "Nota inválida!"
+}
+```
 
-### Switch #03
+#### Switch #02
+- Switch sem nenhuma expressão associada.
+- Neste caso, procura-se pelo case 
+  verdadeiro.
+- Exemplo:
+```
+t := time.Now()
+switch { //switch true
+case t.Hour() < 12:
+  fmt.Println("Bom dia!")
+case t.Hour() < 18:
+  fmt.Println("Boa tarde!")
+default:
+  fmt.Println("Boa noite!")
+}
+```
 
+#### Switch #03
+- O tipo **interface** é 
+  genérico.
+Posso usar switch para verificar qual
+  é o tipo do parâmetro passado por
+  parâmetro.
+  
+- Exemplo:
+```
+func tipo(i interface{}) string {
+  switch i.(type) {
+  case int:
+    return "Inteiro"
+  case float32, float64:
+    return "float"
+  case string:
+	return "string"
+  case func():
+	return "função"
+  default:
+  	return "n sei"
+  }
+}
+```
+## Arrays
+- Estruturas ~~~~fixas e homogêneas (mesmo 
+  tipo).
+  
+- Não precisa ser inicializado. Por 
+padrão, os arrays são criados e inicializados 
+  com zeros do tipo definido.
+### Definição
+- nome_array [tamanho] tipo
+- Exemplo:
+```
+var notas [3] float64
+```
+### Atribuição múltipla
+- Exemplo:
+```
+notas[0], notas[1], notas[2] = 3.3, 1.2, 4.4
+```
+
+### Tamanho de um array e convertendo para um tipo
+- Exemplo:
+```
+float64(len(notas))
+```
+
+### Tamanho do array indefinido
+- Exemplo:
+```
+numeros := [...] int {1,2,3,4,5}
+```
+Obs: O compilador que vai contar. Neste caso o
+array **numeros** é composto por
+5 inteiros.
+
+### Percorrer um for usando range
+#### for para acessar índice e valor
+```
+for i, numero := range numeros {
+  fmt.Printf("%d) %d\n", i, numero)
+}
+```
+
+#### for ignorando o índice usando _
+```
+for _, numeros := range numeros {
+  fmt.Println(numeros)
+}
+```
+
+### for ignorando os valores
+```
+for numeros := range numeros {
+  fmt.Println(numeros) //serão impressos os indices
+}
+```
