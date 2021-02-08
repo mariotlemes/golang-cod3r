@@ -132,8 +132,34 @@ Data de início do aprendizado: **01/02/2021**.
 
 ### if-else-if
 
+- Estrutura:
+```
+    if condição 1 {
+        //se condição 1 for true;
+    } else if condicao 2 {
+        //se condição 2 for true;
+    } else if condicao n {
+        // se condição n for true;
+    } else {
+        // todas anteriores são False
+    }
+```
 ### if com Init
+- Ideia: Trazer a inicialização de uma
+variável da estrutura de controle for para o if.
+Portanto, é possível criar uma variável que
+  receba uma valor e que só funciona dentro do if.
 
+- Estrutura:
+```
+    if i := 2; i == 2 {
+      fmt.Println("A variavél i vale 2")
+    } else {
+      fmt.Println("A variável i não é igual a 2")
+    }
+```
+Obs: No lugar de uma atribuição estática pode-se 
+utilizar uma função previamente definida.
 ### For
 
 ### Switch #01
