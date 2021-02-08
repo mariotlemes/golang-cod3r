@@ -222,7 +222,7 @@ existe **while** e suas variantes.
 ```
 switch nota {
   case 10:
-	 fallthrough
+    fallthrough
   case 9:
 	return "A"
   case 8, 7:
