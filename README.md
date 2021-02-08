@@ -19,6 +19,9 @@
     - [if-else-if](#if-else-if)
     - [if com Init](#if-com-init)
     - [For](#for)
+      - [For com uma condição - parecido com if](#for-com-uma-condi%C3%A7%C3%A3o---parecido-com-if)
+      - [For tradicional](#for-tradicional)
+      - [For "infinito"](#for-infinito)
     - [Switch #01](#switch-01)
     - [Switch #02](#switch-02)
     - [Switch #03](#switch-03)
@@ -161,6 +164,35 @@ Portanto, é possível criar uma variável que
 Obs: No lugar de uma atribuição estática pode-se 
 utilizar uma função previamente definida.
 ### For
+#### For com uma condição - parecido com if
+-Exemplo:
+```
+i := 1
+	for i <= 10 {
+		fmt.Println(i)
+		i++
+	}
+
+```
+#### For tradicional
+- Exemplo:
+```
+for i := 0; i <=20; i += 2 {
+  fmt.Printf("%d ", i)
+}
+```
+#### For "infinito"
+- Exemplo:
+
+```
+for {
+  fmt.Println("Para sempre!")
+  time.Sleep(time.Second * 2)
+}
+```
+Obs: A **única** estrutura de 
+repetição em go é o **for**, não
+existe **while** e suas variantes.
 
 ### Switch #01
 
