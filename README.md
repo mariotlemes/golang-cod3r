@@ -35,6 +35,9 @@
       - [for para acessar índice e valor](#for-para-acessar-%C3%ADndice-e-valor)
       - [for ignorando o índice usando _](#for-ignorando-o-%C3%ADndice-usando-_)
       - [for ignorando os valores](#for-ignorando-os-valores)
+    - [Slice](#slice)
+      - [Slice com make](#slice-com-make)
+      - [Slice apontando para a mesma posição do array interno.](#slice-apontando-para-a-mesma-posi%C3%A7%C3%A3o-do-array-interno)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -331,4 +334,45 @@ for _, numeros := range numeros {
 for numeros := range numeros {
   fmt.Println(numeros) //serão impressos os indices
 }
+```
+### Slice
+- É um pedaço de um array.
+- É um ponteiro que indica apenas o elemento inicial (opcional) e o elemento final
+de um array já existente. Dá pra incluir ou não os elementos
+  inicial/final usando o símbolo **:** (dois pontos).
+  
+```
+a2 := [5] int {1, 2, 3, 4, 5}
+
+s2 := a2 [1:3] //s2 imprimi os itens 2 e 3 (posição 1 a 3).
+```
+
+#### Slice com make
+```
+    // array com 10 posições é criado e preenchido com 0
+	s := make([]int, 10)
+	
+    s[9] = 12
+	
+    fmt.Println(s)
+    
+    // array com 10 posições mas com capacidade de 20
+	s = make([]int, 10, 20)
+    
+    // métodos len e cap para trabalhar com slices
+	fmt.Println(s, len(s), cap(s))
+```
+
+#### Slice apontando para a mesma posição do array interno.
+
+```
+s1 := make([] int, 10, 20)
+s2 := append(s1, 1, 2, 3)
+
+fmt.Println(s1, s2)
+
+s1[0] = 7
+
+//s1 e s2 apontam para o número 7
+fmt.Println(s1, s2)
 ```

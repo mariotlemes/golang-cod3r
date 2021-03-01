@@ -13,5 +13,10 @@ func main() {
 		fmt.Println(numeros)
 	}
 
+	for numeros := range numeros { //somente índices
+		fmt.Println(numeros)
+	}
+
+
 
 }
