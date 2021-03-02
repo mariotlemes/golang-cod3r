@@ -38,6 +38,14 @@
     - [Slice](#slice)
       - [Slice com make](#slice-com-make)
       - [Slice apontando para a mesma posição do array interno.](#slice-apontando-para-a-mesma-posi%C3%A7%C3%A3o-do-array-interno)
+    - [Map](#map)
+  - [Funções](#fun%C3%A7%C3%B5es-1)
+    - [Básicas](#b%C3%A1sicas)
+      - [Função sem parâmetro de entrada e sem retorno](#fun%C3%A7%C3%A3o-sem-par%C3%A2metro-de-entrada-e-sem-retorno)
+      - [Função com parâmetros de entrada e sem retorno](#fun%C3%A7%C3%A3o-com-par%C3%A2metros-de-entrada-e-sem-retorno)
+      - [Função sem parâmetro de entrada e com retorno](#fun%C3%A7%C3%A3o-sem-par%C3%A2metro-de-entrada-e-com-retorno)
+      - [Função completa: recebe parâmetros e com retorno](#fun%C3%A7%C3%A3o-completa-recebe-par%C3%A2metros-e-com-retorno)
+      - [Função que retorna múltiplos valores](#fun%C3%A7%C3%A3o-que-retorna-m%C3%BAltiplos-valores)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -349,18 +357,18 @@ s2 := a2 [1:3] //s2 imprimi os itens 2 e 3 (posição 1 a 3).
 
 #### Slice com make
 ```
-    // array com 10 posições é criado e preenchido com 0
-	s := make([]int, 10)
-	
-    s[9] = 12
-	
-    fmt.Println(s)
-    
-    // array com 10 posições mas com capacidade de 20
-	s = make([]int, 10, 20)
-    
-    // métodos len e cap para trabalhar com slices
-	fmt.Println(s, len(s), cap(s))
+// array com 10 posições é criado e preenchido com 0
+s := make([]int, 10)
+
+s[9] = 12
+
+fmt.Println(s)
+
+// array com 10 posições mas com capacidade de 20
+s = make([]int, 10, 20)
+
+// métodos len e cap para trabalhar com slices
+fmt.Println(s, len(s), cap(s))
 ```
 
 #### Slice apontando para a mesma posição do array interno.
@@ -375,4 +383,89 @@ s1[0] = 7
 
 //s1 e s2 apontam para o número 7
 fmt.Println(s1, s2)
+```
+### Map
+- Precisam ser inicializados. 
+- Possuem uma estrutura de chave e valor.
+- Podem ser percorridos com for. Pode-se acessar cada valor e fazer 
+a exclusão com o método delete(chave)
+```
+aprovados := make(map[int]string)
+
+aprovados[123456789] = "Maria"
+aprovados[12421242] = "Ana"
+
+fmt.Println(aprovados)
+
+for cpf, nome  := range aprovados {
+    fmt.Printf("%s (CPF: %d)\n", nome, cpf )
+}
+
+fmt.Println(aprovados[123456789])
+
+```
+
+- Declarar um map e inicilizar:
+```
+listaFuncionarios := map[string]float64 {
+    "José João": 11242.56,
+    "Gabriel Junior": 1500.00,
+    "Maria Joana": 1200.00,
+}
+```
+
+- A exclusão de uma chave que não existe em um map 
+não retorna erro.
+  
+- Maps aninhados:
+
+```
+funcsPorLetra := map[string]map[string]float64 {
+    "G": {
+        "Gabriela Silva": 14535.32,
+        "Guga Pereira": 12323.33,
+    },
+
+    "J": {
+        "José Alves": 12323.12,
+        "João José": 1231.22,
+    },
+    "P": {
+        "Pedro S": 123.22,
+        "Pato": 1212.23,
+    },
+}
+```
+
+## Funções
+### Básicas
+#### Função sem parâmetro de entrada e sem retorno
+```
+func imprimirValor() {
+  fmt.Println("Esta função apenas imprime um valor")
+}
+```
+#### Função com parâmetros de entrada e sem retorno
+```
+func funcaoComParametroSemRetorno (parametro1 string, parametro2 string) {
+  fmt.Printf("Função com parâmetro mas sem retorno: %s %s \n", parametro1, parametro2)
+}
+```
+#### Função sem parâmetro de entrada e com retorno
+```
+func funcaoSemParametroComRetorno() string {
+  return "Retorno da função sem parâmetro mas como retorno"
+}
+```
+#### Função completa: recebe parâmetros e com retorno
+```
+func FuncaoCompletaComParametrosDoMesmoTipo (parametro1, parametro2 string) string {
+  return fmt.Sprintf("Parâmetros do mesmo tipo: %s %s", parametro1, parametro2)
+}
+```
+#### Função que retorna múltiplos valores
+```
+func funcaoMultiplosRetornos () (string, string) {
+  return "Retorno 1", "Retorno 2"
+}
 ```
