@@ -55,6 +55,11 @@
     - [Funções closure()](#fun%C3%A7%C3%B5es-closure)
     - [Funções recursivas](#fun%C3%A7%C3%B5es-recursivas)
     - [Defer](#defer)
+    - [Passando ponteiro para função](#passando-ponteiro-para-fun%C3%A7%C3%A3o)
+    - [Função init](#fun%C3%A7%C3%A3o-init)
+  - [Sistema de tipos](#sistema-de-tipos)
+    - [Struct simples](#struct-simples)
+    - [Struct aninhada](#struct-aninhada)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -670,3 +675,97 @@ func main() {
 - No exemplo, a string "fim!" será exibida
 antes de retornar "5000" ou a variável número.
   
+### Passando ponteiro para função
+- Evitar passagem por referência. Priorizar a passagem
+por valor (ao usar ponteiros). Isso é uma boa prática.
+  
+```
+func inc1(n int) {
+  n++
+}
+
+// ponteiro é representado por *
+func inc2 (n *int) {
+  //revisão: * é usado para desreferenciar. Valor a qual o ponteiro aponta.
+  *n++
+}
+
+func main() {
+  n := 1
+  inc1(n) //por valor
+  fmt.Println(n)
+
+  // revião: & usado para obter o endereço
+  inc2(&n) // por referência
+  fmt.Println(n)
+}
+```
+- No exemplo, inc2(&n) imprime o valor 2. 
+
+### Função init
+- Função é executada por padrão quando o 
+arquivo é interpretado. A função init() não
+  precisa ser chamada na função main() pois será
+  invocada primeiramente por padrão.
+```
+func init() {
+  fmt.Println("Inicializando...")
+}
+
+func main() {
+  fmt.Println("Main!")
+}
+```
+- No exemplo, primeiro imprime-se "Inicializando..." 
+para depois imprimir "Main!".
+- Se tiver outro método init() em outro arquivo 
+dentro da mesma pasta, e se todas as funções
+  forem rodar ao mesmo tempo, todas as funções 
+  init() serão executadas primeiro.
+  
+## Sistema de tipos
+### Struct simples
+- Permite o agrupamento de dados
+- Define a palava chave type nome struct {} para
+definir a estrutura.
+```
+package main
+
+import "fmt"
+
+type produto struct {
+  nome string
+  preco float64
+  desconto float64
+}
+//Método com receiver
+
+func (p produto) precoComDesconto () float64{
+  return p.preco * (1 - p.desconto)
+}
+
+func main() {
+
+  var produto1 produto
+  
+  produto1 = produto {
+      nome: "Lapis",
+      preco: 1.2,
+      desconto: 0.05,
+  }
+  
+  fmt.Println(produto1, produto1.precoComDesconto()
+
+  produto2 := produto{"Notebook", 1200.00, 0.10}
+
+  fmt.Println(produto2.precoComDesconto())
+}
+``` 
+- Duas formas foram usadas no exemplo para
+definir uma struct. Importante ver que na struct
+  produto1 o último campo precisa ter uma virgula
+  antes de fechar a chave.
+- A struct produto2 já inicializa e define
+a estrutura do tipo produto.
+
+### Struct aninhada
