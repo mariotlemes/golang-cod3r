@@ -58,7 +58,7 @@
     - [Passando ponteiro para função](#passando-ponteiro-para-fun%C3%A7%C3%A3o)
     - [Função init](#fun%C3%A7%C3%A3o-init)
   - [Sistema de tipos](#sistema-de-tipos)
-    - [Struct simples](#struct-simples)
+    - [Struct simples e método receiver](#struct-simples-e-m%C3%A9todo-receiver)
     - [Struct aninhada](#struct-aninhada)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -724,7 +724,7 @@ dentro da mesma pasta, e se todas as funções
   init() serão executadas primeiro.
   
 ## Sistema de tipos
-### Struct simples
+### Struct simples e método receiver
 - Permite o agrupamento de dados
 - Define a palava chave type nome struct {} para
 definir a estrutura.
