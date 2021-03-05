@@ -46,6 +46,15 @@
       - [Função sem parâmetro de entrada e com retorno](#fun%C3%A7%C3%A3o-sem-par%C3%A2metro-de-entrada-e-com-retorno)
       - [Função completa: recebe parâmetros e com retorno](#fun%C3%A7%C3%A3o-completa-recebe-par%C3%A2metros-e-com-retorno)
       - [Função que retorna múltiplos valores](#fun%C3%A7%C3%A3o-que-retorna-m%C3%BAltiplos-valores)
+    - [Pilha de funções (debug.PrintStack())](#pilha-de-fun%C3%A7%C3%B5es-debugprintstack)
+    - [Retornos de função nomeados](#retornos-de-fun%C3%A7%C3%A3o-nomeados)
+    - [Armazenar funções em variáveis](#armazenar-fun%C3%A7%C3%B5es-em-vari%C3%A1veis)
+    - [Função como parâmetro](#fun%C3%A7%C3%A3o-como-par%C3%A2metro)
+    - [Funções variáticas #01](#fun%C3%A7%C3%B5es-vari%C3%A1ticas-01)
+    - [Funções variáticas e slices #02](#fun%C3%A7%C3%B5es-vari%C3%A1ticas-e-slices-02)
+    - [Funções closure()](#fun%C3%A7%C3%B5es-closure)
+    - [Funções recursivas](#fun%C3%A7%C3%B5es-recursivas)
+    - [Defer](#defer)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -469,3 +478,195 @@ func funcaoMultiplosRetornos () (string, string) {
   return "Retorno 1", "Retorno 2"
 }
 ```
+
+### Pilha de funções (debug.PrintStack())
+```
+package main
+
+import "runtime/debug"
+
+func f3() {
+  debug.PrintStack()
+}
+
+func f2() {
+  f3()
+}
+
+func f1 () {
+  f2()
+}
+
+func main() {
+  f1()
+}
+```
+
+### Retornos de função nomeados
+- uso o conceito de retorno "limpo"
+```
+func trocar (p1, p2, int) (segundo int, primeiro int){
+  segundo = p2
+  primeiro = p1
+  return //retorno limpo
+}
+```
+
+### Armazenar funções em variáveis
+```
+package main
+
+import "fmt"
+
+var soma = func (a int, b int) int {
+  return a + b
+}
+
+func main() {
+  fmt.Println(soma(3,4))
+  
+  var sub = func (a int, b int) int {
+      return a -b
+  }
+  
+  fmt.Println(sub(2, 3))
+}
+
+```
+### Função como parâmetro
+``` 
+package main
+
+import "fmt"
+
+func multiplicacao (a int, b int) int {
+  return a * b
+}
+
+func exec (funcao func(int, int) int, p1, p2, int) int {
+  return funcao(p1, p2)
+}
+
+func main() {
+  resultado := exec(multiplicacao(2,3))
+  fmt.Println(resultado)
+}
+```
+### Funções variáticas #01
+- São aquelas funções que possuem a quantidade variável de parâmetros.
+- Ao colocar o símbolo **...** indicamos que a quantidade de 
+parâmetros é variável.
+  
+```
+package main
+
+import "fmt"
+
+func media(numeros ... float64) float64 {
+  total := 0.0
+  for _, num := range numeros {
+      total += num
+  }
+  return total/float64(len(numeros))
+}
+
+func main() {
+  fmt.Printf("Media:%2.f", media(7.7, 2.2, 1))
+}
+```
+### Funções variáticas e slices #02
+```
+package main
+
+import "fmt"
+
+func imprimirAprovados (aprovados ... string) {
+  fmt.Println("Lista de aprovados:\n")
+  for i, aprovado := range aprovados {
+      fmt.Printf("(%d) %s\n", i+1, aprovado)
+  }
+}
+
+func main() {
+  aprovados := []string{"Maria", "Pedro", "Rafael", "Guilherme"}
+  imprimirAprovados(aprovados...)
+}
+```
+### Funções closure()
+```
+package main
+
+import "fmt"
+
+func closure () func() {
+  x := 10
+  var funcao = func() {
+      fmt.Println(x)
+  }
+  return funcao
+}
+
+func main() {
+  x := 20
+  fmt.Println(x)
+
+  imprimeX := closure()
+  imprimeX()
+}
+```
+
+### Funções recursivas
+```
+package main
+
+import "fmt"
+
+func fatorial(n int) (int, error) {
+  switch {
+  case n < 0:
+      return -1, fmt.Errorf("Número inválido: %d", n)
+  case n == 0:
+      return 1, nil
+  default:
+      fatorialAnterior, _ := fatorial(n - 1)
+      return n * fatorialAnterior, nil
+  }
+}
+
+func main() {
+  resultado, _ := fatorial(5)
+  fmt.Printf("O resultado é: %d\n", resultado)
+
+  _, err := fatorial (-4)
+
+  if err != nil {
+      fmt.Println(err)
+  }
+}
+```
+
+### Defer
+- Ao utilizar, o que estiver com defer será
+executado no último momento, antes do retorno da
+  função.
+  
+```
+func obterValorAprovado( numero int) int {
+defer fmt.Println("fim!")
+  if numero > 5000 {
+    fmt.Println("Valor alto!..")
+    return 5000
+} else {
+    fmt.Println("Valor baixo! ..")
+    return numero
+  }
+}
+
+func main() {
+  fmt.Println(obterValorAprovado(5000))
+  fmt.Println(obterValorAprovado(3000))
+}
+```
+- No exemplo, a string "fim!" será exibida
+antes de retornar "5000" ou a variável número.
+  
